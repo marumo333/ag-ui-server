@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import { RunAgentInputSchema, RunAgentInput } from "@ag-ui/core";
 import { MyAgent } from "./agent";
