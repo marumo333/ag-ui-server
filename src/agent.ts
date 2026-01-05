@@ -24,7 +24,7 @@ import {
   tool as createVercelAISDKTool,
   ToolSet,
 } from "ai";
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 
@@ -46,9 +46,9 @@ export class MyAgent extends AbstractAgent {
       } as RunStartedEvent);
 
       const response = streamText({
-        // Anthropic の Claude 3.5 Haiku モデルを呼び出す
+        // Google の Gemini 2.5 Flash Lite モデルを呼び出す
         // Vercel AI SDK は AI モデルを自由に切り替えられるように設計されている
-        model: anthropic("claude-3-5-haiku-latest"),
+        model: google("gemini-2.5-flash-lite"),
         // HTTP リクエストで受け取った受け取ったメッセージとツールを Vercel AI SDK の形式に変換してから設定する
         messages: convertMessagesToVercelAISDKMessages(input.messages),
         tools: convertToolToVerlAISDKTools(input.tools),

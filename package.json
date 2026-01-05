@@ -16,6 +16,7 @@
     "@ag-ui/core": "^0.0.42",
     "@ag-ui/encoder": "^0.0.42",
     "@ai-sdk/anthropic": "^3.0.2",
+    "@ai-sdk/google": "^3.0.2",
     "ai": "^6.0.6",
     "express": "^5.2.1",
     "rxjs": "7.8.1"
