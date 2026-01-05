@@ -44,3 +44,7 @@ app.post("/awp", async (req, res) => {
     res.status(422).json({ error: error.message });
   }
 });
+
+app.listen(8080, () => {
+  console.log("Server is running on http://localhost:8080");
+});
