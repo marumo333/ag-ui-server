@@ -138,12 +138,7 @@ export class MyAgent extends AbstractAgent {
               return;
             } else if (part.type === 'finish') {
               // ストリームが完了した場合
-              const event: TextMessageEndEvent = {
-                type: EventType.TEXT_MESSAGE_END,
-                messageId,
-              };
-              subscriber.next(event);
-
+              // TEXT_MESSAGE_END は text-end で既に送信済みなので送信しない
               subscriber.next({
                 type: EventType.RUN_FINISHED,
                 threadId: input.threadId,
